@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>NutriFlip</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="menu-inicial">
+
+  <div id="menu" class="screen">
+    <button onclick="showPhaseMenu()">Selecionar Fase</button>
+    <button onclick="showAjudaMenu()">Ajuda</button>
+  </div>
+
+  <div id="faseMenu" class="screen hidden">
+    <h2>Escolha a Fase</h2>
+    <button onclick="startGame(1)">Fase 1</button>
+    <button onclick="startGame(2)">Fase 2</button>
+    <button onclick="startGame(3)">Fase 3</button>
+    <button onclick="startGame(4)">Fase 4</button>
+    <button onclick="goHome()">Voltar</button>
+  </div>
+
+  <div id="game" class="screen hidden">
+    <h2 id="faseTitle">Fase</h2>
+    <p>Tempo restante: <span id="timer">--</span> segundos</p>
+    <div id="gameBoard" class="board"></div>
+    <div id="popup" class="popup hidden">
+      <p id="benefitText"></p>
+      <button onclick="closePopup()">Fechar</button>
+    </div>
+    <button onclick="goHome()">Voltar ao Menu</button>
+  </div>
+
+  <div id="ajudaMenu" class="screen hidden">
+    <h2>Suporte</h2>
+    <button onclick="showTelaAjuda('termo')">1 - Termo de Serviço</button>
+    <button onclick="showTelaAjuda('privacidade')">2 - Política de Privacidade</button>
+    <button onclick="showTelaAjuda('dicas')">3 - Dicas</button>
+    <button onclick="showTelaAjuda('sobre')">4 - Sobre Nós</button>
+    <button onclick="goHome()">Voltar ao menu</button>
+  </div>
+
+  <div id="telaAjuda" class="screen hidden">
+    <h2 id="ajudaTitulo"></h2>
+    <p id="ajudaTexto" style="max-width: 600px; text-align: left;"></p>
+    <button onclick="showAjudaMenu()">Voltar ao suporte</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

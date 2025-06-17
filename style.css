@@ -1,0 +1,154 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f0f8f5;
+  margin: 0;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+
+body.menu-inicial {
+  background-image: url('assets/tela-inicial.png');
+}
+body.fase-menu {
+  background-image: url('assets/bg-fase-menu.png');
+}
+body.fase-1 {
+  background-image: url('assets/bg-fase1.png');
+}
+body.fase-2 {
+  background-image: url('assets/bg-fase2.png');
+}
+body.fase-3 {
+  background-image: url('assets/bg-fase3.png');
+}
+body.fase-4 {
+  background-image: url('assets/bg-fase4.png');
+}
+body.ajuda-menu {
+  background-image: url('assets/ajuda-menu.png');
+}
+body.ajuda-termo {
+  background-image: url('assets/ajuda-termo.png');
+}
+body.ajuda-privacidade {
+  background-image: url('assets/ajuda-privacidade.png');
+}
+body.ajuda-dicas {
+  background-image: url('assets/ajuda-dicas.png');
+}
+body.ajuda-sobre {
+  background-image: url('assets/ajuda-sobre.png');
+}
+
+.screen {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.board {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Grade por fase */
+/* Grade por fase fixa */
+body.fase-1 .board {
+  grid-template-columns: repeat(3, 150px);
+}
+body.fase-2 .board {
+  grid-template-columns: repeat(4, 150px);
+}
+body.fase-3 .board {
+  grid-template-columns: repeat(5, 150px);
+}
+body.fase-4 .board {
+  grid-template-columns: repeat(4, 150px);
+}
+
+
+
+.card {
+  width: 150px;
+  height: 180px;
+  background: #ff4d4d;
+  border-radius: 10px;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card.revealed, .card.matched {
+  background: #8aff8a;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px;
+  border: 2px solid green;
+  border-radius: 10px;
+  z-index: 10;
+}.card {
+  width: 100px;
+  height: 120px;
+  perspective: 800px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.revealed .card-inner,
+.card.matched .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+}
+
+.card-front {
+  background: #ff4d4d;
+}
+
+.card-back {
+  background: #8aff8a;
+  transform: rotateY(180deg);
+}
+
